@@ -409,8 +409,39 @@
         }
       }
       @media (max-width: 480px) {
+        .hero,
+        .community-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero {
+          padding-bottom: 100px;
+        }
+        .hero-btns {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+          width: 100%;
+        }
+        .hero-image {
+          display: flex;
+          flex-direction: column;
+        }
+        .hero-image img {
+          height: 220px;
+          width: 220px;
+          border-radius: 100%;
+        }
+
         .ticker-section {
-          padding: 40px 40px;
+          padding: 16px;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -438,7 +469,7 @@
             A fun and lighthearted memecoin designed to bring a smile to your
             face and rewards to your wallet.
           </p>
-          <div>
+          <div class="hero-btns">
             <a href="#ticker" class="btn">Features</a>
             <a href="#community" class="btn-second btn">Join Community</a>
           </div>
