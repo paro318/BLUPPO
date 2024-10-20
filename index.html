@@ -174,12 +174,17 @@
       /* Ticker section styles */
       .ticker-section {
         padding: 40px 40px;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
         background-color: #fff;
         position: relative;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
+      }
+      .upper-ticker-content {
+        gap: 2rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .ticker-item {
@@ -202,7 +207,8 @@
         transition: all 300ms ease;
       }
       .ticker-item:hover h2,
-      .ticker-item:hover p {
+      .ticker-item:hover p,
+      .ticker-item:hover li {
         color: #fff;
       }
       .ticker-item img {
@@ -224,27 +230,65 @@
         color: #0f8ad7;
       }
 
-      .ticker-content p {
+      .ticker-content p,
+      .center-ticker-content p,
+      .center-ticker-content li {
         font-size: 1.2rem;
         color: #0f8ad7;
         width: 70%;
         text-align: center;
       }
-
-      .features {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        background-color: #1a237e;
-        width: 150px;
-        height: 150px;
+      .center-ticker-content {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 100%;
-        font-size: 1.5rem;
+        gap: 2rem;
       }
+      .center-ticker-content h2 {
+        font-size: 3.5rem;
+        color: #0f8ad7;
+      }
+      .center-ticker-content p {
+        font-size: 2rem;
+        /* border: 2px solid red; */
+        width: 100%;
+      }
+      .center-ticker-content ul {
+        /* border: 2px solid red; */
+        width: 100%;
+        list-style: none;
+      }
+      .center-ticker-content li {
+        width: 100%;
+        /* border: 2px solid red; */
+        font-size: 1.7rem;
+        text-align: center;
+      }
+
+      .bottom-ticker-content {
+        overflow: hidden;
+        /* border: 2px solid red; */
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        gap: 1rem;
+        background-color: #fff;
+        width: 100%;
+        color: #0a0a2a;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .bottom-ticker-content img {
+        width: 450px;
+        border-radius: 100%;
+      }
+      .bottom-ticker-content img:nth-child(1) {
+        transform: scaleX(-1);
+      }
+
       /* Community Section */
       .community {
         padding: 100px 0;
@@ -387,6 +431,20 @@
           border: 2px solid #fff;
         }
 
+        .bottom-ticker-content img:nth-child(1) {
+          display: none;
+        }
+        .center-ticker-content h2 {
+          font-size: 2.5rem;
+        }
+        .center-ticker-content p {
+          font-size: 1.5rem;
+        }
+
+        .center-ticker-content li {
+          font-size: 1.3rem;
+        }
+
         .community-content {
           display: flex;
           padding-bottom: 2rem;
@@ -440,7 +498,7 @@
           border-radius: 100%;
         }
 
-        .ticker-section {
+        .upper-ticker-content {
           padding: 16px;
           display: flex;
           flex-direction: column;
@@ -451,8 +509,15 @@
           gap: 2rem;
           padding-top: 100px;
         }
-        .features {
-          top: 0;
+        .bottom-ticker-content {
+          flex-direction: column;
+          padding: 0;
+        }
+        .bottom-ticker-content img:nth-child(1) {
+          display: block;
+        }
+        .bottom-ticker-content img {
+          width: 100px;
         }
       }
       .logo-a {
@@ -483,48 +548,45 @@
     </section>
     <!-- Ticker section -->
     <section class="ticker-section" id="ticker">
-      <div class="features">Features</div>
-      <div class="ticker-item">
-        <div class="ticker-content">
-          <h2>Community Driven</h2>
-          <p>
-            BLUPPO is not just a memecoin, it's a fun and vibrant community!
-          </p>
+      <div class="upper-ticker-content">
+        <div class="ticker-item">
+          <div class="ticker-content">
+            <h2>Community Driven</h2>
+            <p>
+              BLUPPO is not just a memecoin, it's a fun and vibrant community!
+            </p>
+          </div>
+          <div class="ticker-image">
+            <img src="Photo6.jpeg" alt="BLUPPO at Olympics" />
+          </div>
         </div>
-        <div class="ticker-image">
-          <img src="Photo6.jpeg" alt="BLUPPO at Olympics" />
-        </div>
-      </div>
-      <div class="ticker-item">
-        <div class="ticker-content">
-          <h2>1 Billion Supply</h2>
-          <p>
-            The total supply of BLUPPO (BLUP) is capped at 1 billion tokens.
-          </p>
-        </div>
-        <div class="ticker-image">
-          <img src="Photo5.jpeg" alt="BLUPPO Playing Sports" />
-        </div>
-      </div>
-      <div class="ticker-item">
-        <div class="ticker-content">
-          <h2>Zero Taxes</h2>
-          <p>
-            Enjoy trading with zero buy or sell taxes. No fees, just pure fun!
-          </p>
-        </div>
-        <div class="ticker-image">
-          <img src="Photo7.jpeg" alt="BLUPPO Working" />
+        <div class="ticker-item">
+          <div class="ticker-content">
+            <h2>1 Billion Supply</h2>
+            <p>
+              The total supply of BLUPPO (BLUP) is capped at 1 billion tokens.
+            </p>
+          </div>
+          <div class="ticker-image">
+            <img src="Photo5.jpeg" alt="BLUPPO Playing Sports" />
+          </div>
         </div>
       </div>
-      <div class="ticker-item">
-        <div class="ticker-content">
-          <h2>Cosmic Creativity</h2>
-          <p>Unleash your creativity and be part of the BLUPPO story!</p>
+      <div class="bottom-ticker-content">
+        <img src="Photo2.jpeg" alt="BLUPPO Playing Guitar" />
+        <div class="center-ticker-content">
+          <h2>Blupponomics</h2>
+          <div class="pdiv">
+            <p>Ticker $BLUP</p>
+            <p>Fair Launch on App Store</p>
+          </div>
+          <ul>
+            <li>0/0 Taxes</li>
+            <li>contract renounced</li>
+            <li>liquidity burnt</li>
+          </ul>
         </div>
-        <div class="ticker-image">
-          <img src="Photo8.jpeg" alt="BLUPPO Playing Guitar" />
-        </div>
+        <img src="Photo1.jpeg" alt="BLUPPO Playing Guitar" />
       </div>
     </section>
 
